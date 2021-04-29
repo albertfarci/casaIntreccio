@@ -1,0 +1,10 @@
+<ion-row [hidden]="!listMapConfiguration?.listVisible" style="width: 100%;">
+  <app-case-list [case]="caseList">
+  </app-case-list>
+</ion-row>
+
+<ion-row [hidden]="!listMapConfiguration?.mapVisible" style="width: 100%; height: 100%;">
+  <app-map [chieseList]="caseList" [listMapConfiguration]="listMapConfiguration" style="width: 100%; height: 100%;"
+    [currentPosition]="currentPosition">
+  </app-map>
+</ion-row>

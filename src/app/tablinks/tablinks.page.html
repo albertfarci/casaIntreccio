@@ -1,0 +1,34 @@
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button tab="itinerario-detail">
+      <ion-icon name="trail-sign-outline"></ion-icon>
+      <ion-label>
+        {{ 'itinerari' | translatePipe}}
+      </ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="home">
+      <ion-icon name="map-outline"></ion-icon>
+      <ion-label>
+        {{ 'case' | translatePipe}}
+      </ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="dashboard">
+      <ion-icon name="radio-outline"></ion-icon>
+      <ion-label>
+        {{ 'scansione' | translatePipe}}
+      </ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="preferiti">
+      <ion-icon name="heart-outline"></ion-icon>
+      <ion-label>
+        {{ 'preferiti' | translatePipe}}
+      </ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+</ion-tabs>
