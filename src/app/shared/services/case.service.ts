@@ -18,7 +18,7 @@ export class CaseService {
   getAllCaseAndIntineraries(): Observable<any> {
     console.log(TranslationModels[this.translateService.currentLang])
 
-    return this.httpClient.get(`../../../assets/chieseRomane.json`);
+    return this.httpClient.get(`../../../assets/chieseRomane-${this.translateService.currentLang}.json`);
   }
 
   getAllCase(): Observable<any> {

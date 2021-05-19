@@ -33,7 +33,7 @@ export class AppComponent {
           this.alert(JSON.stringify(lang.value))
           this.translateService.use(lang.value.split('-')[0].toLowerCase())
         })
-        .catch(e => this.translateService.use('IT'.toLowerCase()));
+        .catch(e => this.translateService.use('FR'.toLowerCase()));
 
 
     });

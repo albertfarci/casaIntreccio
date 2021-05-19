@@ -4,6 +4,7 @@ import { Toast } from '@ionic-native/toast/ngx';
 import { DashboardTemplateService } from 'src/app/dashboard/services/dashboard-template.service';
 import { SLIDES_OPTIONS_CONFIGURATIONS } from '../../models/slideoptions.model';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { StorageService } from '../../services/storage.service';
 @Component({
   selector: 'app-casa-detail-component',
   templateUrl: './casa-detail.component.html',
@@ -14,15 +15,14 @@ export class CasaDetailComponent implements OnChanges {
   @Input() casa;
   @Input() virtualTour: boolean = false;
   @Input() showIframe: boolean = true;
-  @Input() interno: boolean = false;
   @Input() esterno: boolean = false;
-
-  isPrefferedYet: boolean = false;
+  @Input() isPrefferedYet: boolean = false;
 
   slideOpts = SLIDES_OPTIONS_CONFIGURATIONS.get('photo-gallery')
 
 
   constructor(
+    private storage: StorageService,
     private socialSharing: SocialSharing,
     private toast: Toast,
     private nativeStorage: NativeStorage,
@@ -43,11 +43,8 @@ export class CasaDetailComponent implements OnChanges {
   }
 
   addToPreferiti() {
-    this.nativeStorage.setItem(JSON.stringify(this.casa[0].id), this.casa[0])
-      .then(
-        () => this.alert('Stored item!'),
-        error => console.error('Error storing item', error)
-      );
+    
+    this.storage.insertRow(this.casa[0])
 
   }
 

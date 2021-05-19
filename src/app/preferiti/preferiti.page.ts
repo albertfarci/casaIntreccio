@@ -1,6 +1,7 @@
 import { Component, OnInit, NgZone } from '@angular/core';
-import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { Toast } from '@ionic-native/toast/ngx';
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite/ngx';
+import { CaseService } from '../shared/services/case.service';
 
 @Component({
   selector: 'app-preferiti',
@@ -10,39 +11,67 @@ import { Toast } from '@ionic-native/toast/ngx';
 export class PreferitiPage {
 
   caseFiltered = []
+  databaseObj: SQLiteObject;
+  row_data: any = [];
+  readonly database_name: string = "items.db";
+  readonly table_name: string = "chiesa";
 
   constructor(
     private toast: Toast,
-    private ngZone: NgZone,
-    private nativeStorage: NativeStorage) { }
+    private caseService: CaseService,
+    private sqlite: SQLite) { }
 
   ionViewDidEnter() {
 
-    this.caseFiltered = []
-    this.ngZone.run(() => {
+    this.sqlite.create({
+      name: this.database_name,
+      location: 'default'
+    })
+      .then((db: SQLiteObject) => {
+        this.databaseObj = db;
+        this.databaseObj.executeSql(`
+      CREATE TABLE IF NOT EXISTS ${this.table_name}  (pid INTEGER PRIMARY KEY, chiesa INTEGER)
+      `, [])
+        .then(() => {
+          this.databaseObj.executeSql(`
+    SELECT * FROM ${this.table_name}
+    `
+      , [])
+      .then((res) => {
 
-      this.nativeStorage.keys()
-        .then(
-          data => this.dataRetrived(data),
-          error => console.error(error)
-        );
-    });
+        this.row_data = [];
+        if (res.rows.length > 0) {
+
+          this.dataRetrived(res.rows);
+          
+        }
+      })
+      .catch(e => {
+        alert("error " + JSON.stringify(e))
+      });
+        })
+        .catch(e => {
+          alert("error " + JSON.stringify(e))
+        });
+        })
+        .catch(e => {
+          alert("error " + JSON.stringify(e))
+        });
   }
 
   dataRetrived = (data) => {
+    this.caseFiltered=[]
 
-    data.map(
-      casaId => {
-        this.nativeStorage.getItem(casaId)
-          .then(
-            data => {
-              this.caseFiltered.push(data)
-            },
-            error => console.error(error)
-          );
-      }
-    )
+    for (var i = 0; i < data.length; i++) {
+
+      this.caseService.getCasaById(data.item(i).chiesa).subscribe(
+        data => {
+          this.caseFiltered.push(data[0])
+        }
+      )
+    }
   };
+
 
   /* toast message */
   alert(msg) {

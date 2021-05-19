@@ -21,16 +21,8 @@ export class VirtualTourComponent implements OnChanges {
 
     if (this.case) {
 
-      if (this.beaconInterno && this.beaconEsterno) {
+      if (this.beaconEsterno) {
         this.stopRangingBeaconsInRegion.emit()
-      }
-
-      if (this.beaconInterno) {
-        this.toast.show('Beacon interno trovato', '5000', 'bottom').subscribe(
-          toast => {
-            console.log(toast);
-          }
-        );
       }
 
       if (this.beaconEsterno) {
@@ -60,11 +52,6 @@ export class VirtualTourComponent implements OnChanges {
                   uuid: casa.uuid,
                   major: casa.major,
                   minor: casa.minor
-                },
-                {
-                  uuid: casa.uuid2,
-                  major: casa.major2,
-                  minor: casa.minor2
                 }
               ]
             }
@@ -74,10 +61,6 @@ export class VirtualTourComponent implements OnChanges {
             (casa.beacons[0].uuid == this.beaconEsterno?.uuid &&
               casa.beacons[0].major == this.beaconEsterno?.major.toString() &&
               casa.beacons[0].minor == this.beaconEsterno?.minor.toString())
-            ||
-            (casa.beacons[1].uuid == this.beaconInterno?.uuid &&
-              casa.beacons[1].major == this.beaconInterno?.major.toString() &&
-              casa.beacons[1].minor == this.beaconInterno?.minor.toString())
         )
     }
   }
