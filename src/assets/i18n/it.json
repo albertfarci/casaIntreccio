@@ -1,8 +1,13 @@
 {
+    "la-laguna":"La laguna",
+    "flora-fauna":"Flora e fauna",
+    "audioguida":"audioguida",
     "casa": "Casa",
     "case": "Case",
+    "descrizione-del-progetto":"Casa dell’Intreccio e della Vita nella Laguna",
     "scansione": "Scansione",
     "preferiti": "Preferiti",
+    "progetto": "Progetto",
     "visita-interattiva": "Visita interattiva",
     "inzia-visita-interattiva": "Inizia la visita interattiva",
     "indicazioni-stradali": "Indicazioni stradali",
@@ -15,5 +20,6 @@
     "avvicinati-alla-chiesa": "Avvicinati alla chiesa",
     "scopri-i-multimedia": "Scopri i contenuti multimediali",
     "nessun-risultato-trovato": "Nessun risultato trovato",
-    "naviga-chiese-aggiungi-preferiti": "Naviga nella sezione chiese e aggiungi ai preferiti"
+    "naviga-chiese-aggiungi-preferiti": "Naviga nella sezione chiese e aggiungi ai preferiti",
+    "testo-progetto":"Un viaggio tra antiche tradizioni di pescatori e artigiani, dalle tecniche dell’Intreccio ai Fassois, piante, animali, che caratterizzano la Laguna di Santa Giusta e il rapporto con chivive a stretto contatto con i suoi elementi.§"
 }

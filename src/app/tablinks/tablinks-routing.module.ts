@@ -6,20 +6,24 @@ import { TablinksPage } from './tablinks.page';
 
 const routes: Routes = [
   {
-    path: 'tablinks',
+    path: '',
     component: TablinksPage,
     children: [
       {
-        path: 'dashboard',
-        loadChildren: () => import('../dashboard/dashboard.module').then(m => m.DashboardPageModule)
+        path: 'la-laguna',
+        loadChildren: () => import('../laguna/laguna.module').then(m => m.LagunaPageModule)
       },
       {
         path: 'preferiti',
         loadChildren: () => import('../preferiti/preferiti.module').then(m => m.PreferitiPageModule)
       },
       {
-        path: 'home',
-        loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
+        path: 'flora-fauna',
+        loadChildren: () => import('../flora-fauna/flora-fauna.module').then(m => m.FloraFaunaPageModule)
+      },
+      {
+        path: 'audioguida',
+        loadChildren: () => import('../audioguida/audioguida.module').then(m => m.AudioguidaPageModule)
       },
       {
         path: 'itinerario-detail',
@@ -27,7 +31,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tablinks/home',
+        redirectTo: '/tablinks/la-laguna',
         pathMatch: 'full'
       }, {
         path: 'chiesa-detail/:id',
@@ -40,7 +44,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tablinks/home',
+    redirectTo: '/tablinks/la-laguna',
     pathMatch: 'full'
   }
 ];

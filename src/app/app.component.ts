@@ -29,14 +29,26 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.globalization.getPreferredLanguage()
-        .then(lang => {
-          this.alert(JSON.stringify(lang.value))
-          this.translateService.use(lang.value.split('-')[0].toLowerCase())
-        })
-        .catch(e => this.translateService.use('FR'.toLowerCase()));
+      .then(lang => {
+        this.alert(JSON.stringify(lang.value))
+        this.translateService.use(lang.value.split('-')[0].toLowerCase())
+        sessionStorage.setItem('lang', lang.value.split('-')[0].toLowerCase())
+      })
+      .catch(e => {
 
+        this.alert(JSON.stringify("setItem"))
+        sessionStorage.setItem('lang', 'it')
+      })
 
     });
+
+    this.platform.backButton.subscribe(
+      () => {
+        if(window.location.pathname.includes('/tabs')){
+          navigator['app'].exitApp();
+        }
+      }
+    )
   }
 
 
