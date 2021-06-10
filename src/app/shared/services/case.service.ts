@@ -33,6 +33,48 @@ export class CaseService {
       )
   }
 
+  getAllLagune(): Observable<any> {
+
+    console.log(TranslationModels[this.translateService.currentLang])
+
+    return this.getAllCaseAndIntineraries()
+      .pipe(
+        map(result =>
+          result.filter(one => one.categories.includes(35) || 
+            one.categories.includes(34) || 
+            one.categories.includes(42) || 
+            one.categories.includes(36) || 
+            one.categories.includes(37))
+        )
+      )
+  }
+
+  getAllFloraFauna(): Observable<any> {
+
+    console.log(TranslationModels[this.translateService.currentLang])
+
+    return this.getAllCaseAndIntineraries()
+      .pipe(
+        map(result =>
+          result.filter(one => one.categories.includes(32) ||
+          one.categories.includes(33) ||
+          one.categories.includes(13))
+        )
+      )
+  }
+
+  getAllAudioGuida(): Observable<any> {
+
+    console.log(TranslationModels[this.translateService.currentLang])
+
+    return this.getAllCaseAndIntineraries()
+      .pipe(
+        map(result =>
+          result.filter(one => one.categories.includes(43))
+        )
+      )
+  }
+
   getAllItinerari(): Observable<any> {
     console.log(TranslationModels[this.translateService.currentLang])
 

@@ -1,9 +1,32 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>laguna</ion-title>
+    <ion-title>
+      <span class="title">
+        {{ 'la-laguna' | translatePipe}}
+      </span>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">
+        <span class="title">
+          {{ 'la-laguna' | translatePipe}}
+        </span></ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid class="gridMap">
+    <ion-row style="height: 85%;     width: 100%; ">
+      <ion-row style="width: 100%; " [hidden]="laguna?.length == 0">
 
+        <ion-row style="height: 90%;     width: 100%; ">
+          <app-home-content style="height: 100%;     width: 100%; " *ngIf="laguna?.length > 0 "
+            [caseList]="laguna" [listMapConfiguration]="listMapSettingsConfiguration">
+          </app-home-content>
+        </ion-row>
+      </ion-row>
+    </ion-row>
+  </ion-grid>
 </ion-content>

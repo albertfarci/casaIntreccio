@@ -33,6 +33,10 @@ const routes: Routes = [
   {
     path: 'audioguida',
     loadChildren: () => import('./audioguida/audioguida.module').then( m => m.AudioguidaPageModule)
+  },
+  {
+    path: 'flora-fauna-detail',
+    loadChildren: () => import('./flora-fauna-detail/flora-fauna-detail.module').then( m => m.FloraFaunaDetailPageModule)
   }
 
 

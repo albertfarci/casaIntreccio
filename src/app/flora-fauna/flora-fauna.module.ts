@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { FloraFaunaPageRoutingModule } from './flora-fauna-routing.module';
 
 import { FloraFaunaPage } from './flora-fauna.page';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FloraFaunaPageRoutingModule
+    FloraFaunaPageRoutingModule,
+    SharedModule
   ],
   declarations: [FloraFaunaPage]
 })

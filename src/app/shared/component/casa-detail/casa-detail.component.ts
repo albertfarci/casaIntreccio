@@ -17,6 +17,7 @@ export class CasaDetailComponent implements OnChanges {
   @Input() showIframe: boolean = true;
   @Input() esterno: boolean = false;
   @Input() isPrefferedYet: boolean = false;
+  @Input() configuration_tipo_casa;
 
   slideOpts = SLIDES_OPTIONS_CONFIGURATIONS.get('photo-gallery')
 
