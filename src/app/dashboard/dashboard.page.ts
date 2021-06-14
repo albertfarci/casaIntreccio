@@ -69,15 +69,8 @@ export class DashboardPage {
     this.ngZone.run(() => {
       beacons.forEach(beacon => {
 
-        if (beacon.rssi < -90 && beacon.minor == 0 && this.beaconEsterno) {
-
-          this.firebaseService.saveExitRegion();
-          return;
-        }
-
         if (beacon.minor == 0 && !this.beaconEsterno) {
           this.beaconEsterno = beacon
-          this.firebaseService.saveEntryRegion();
         }
 
       })
