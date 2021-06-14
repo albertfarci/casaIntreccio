@@ -37,6 +37,14 @@ const routes: Routes = [
   {
     path: 'flora-fauna-detail',
     loadChildren: () => import('./flora-fauna-detail/flora-fauna-detail.module').then( m => m.FloraFaunaDetailPageModule)
+  },
+  {
+    path: 'laguna-detail',
+    loadChildren: () => import('./laguna-detail/laguna-detail.module').then( m => m.LagunaDetailPageModule)
+  },
+  {
+    path: 'audioguida-detail',
+    loadChildren: () => import('./audioguida-detail/audioguida-detail.module').then( m => m.AudioguidaDetailPageModule)
   }
 
 

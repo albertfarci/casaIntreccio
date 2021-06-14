@@ -10,6 +10,10 @@ const routes: Routes = [
     component: TablinksPage,
     children: [
       {
+        path: 'dashboard',
+        loadChildren: () => import('../dashboard/dashboard.module').then(m => m.DashboardPageModule)
+      },
+      {
         path: 'la-laguna',
         loadChildren: () => import('../laguna/laguna.module').then(m => m.LagunaPageModule)
       },
@@ -39,6 +43,18 @@ const routes: Routes = [
       }, {
         path: 'itinerario-item-detail/:id',
         loadChildren: () => import('../itinerario-item-detail/itinerario-item-detail.module').then(m => m.ItinerarioItemDetailPageModule)
+      }
+      , {
+        path: 'flora-fauna-detail/:id',
+        loadChildren: () => import('../flora-fauna-detail/flora-fauna-detail.module').then(m => m.FloraFaunaDetailPageModule)
+      }
+      , {
+        path: 'laguna-detail/:id',
+        loadChildren: () => import('../laguna-detail/laguna-detail.module').then(m => m.LagunaDetailPageModule)
+      }
+      , {
+        path: 'audioguida-detail/:id',
+        loadChildren: () => import('../audioguida-detail/audioguida-detail.module').then(m => m.AudioguidaDetailPageModule)
       }
     ]
   },

@@ -37,7 +37,7 @@ export class AppComponent {
       .catch(e => {
 
         this.alert(JSON.stringify("setItem"))
-        sessionStorage.setItem('lang', 'it')
+        sessionStorage.setItem('lang', 'fr')
       })
 
     });

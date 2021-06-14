@@ -99,4 +99,24 @@ export class CaseService {
       )
   }
 
+
+  getFloraFaunaById(id): Observable<any> {
+    return this.getAllCaseAndIntineraries()
+      .pipe(
+        map(result =>
+          result.filter(one => one.id == id)
+        )
+      )
+  }
+
+
+  getLagunaById(id): Observable<any> {
+    return this.getAllCaseAndIntineraries()
+      .pipe(
+        map(result =>
+          result.filter(one => one.id == id)
+        )
+      )
+  }
+
 }

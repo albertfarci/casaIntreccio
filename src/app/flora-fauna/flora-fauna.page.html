@@ -23,7 +23,9 @@
 
         <ion-row style="height: 90%;     width: 100%; ">
           <app-home-content style="height: 100%;     width: 100%; " *ngIf="floraFauna?.length > 0 "
-            [caseList]="floraFauna" [listMapConfiguration]="listMapSettingsConfiguration">
+            [caseList]="floraFauna" 
+            [configuration_tipo_casa]="'flora-fauna'"
+            [listMapConfiguration]="listMapSettingsConfiguration">
           </app-home-content>
         </ion-row>
       </ion-row>

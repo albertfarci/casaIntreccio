@@ -1,4 +1,9 @@
 {
+    "descrizione":"Description",
+    "conservazione":"Conservation",
+    "ecologia_e_comportamento":"Ecology and behavior",
+    "nome_in_sardo":"Sardinian name",
+    "nome_scientifico": "Scientific name",
     "la-laguna":"La laguna",
     "flora-fauna":"Flora e fauna",
     "audioguida":"audioguida",

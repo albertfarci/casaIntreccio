@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FloraFaunaDetailPageRoutingModule } from './flora-fauna-detail-routing.module';
+import { AudioguidaDetailPageRoutingModule } from './audioguida-detail-routing.module';
 
-import { FloraFaunaDetailPage } from './flora-fauna-detail.page';
+import { AudioguidaDetailPage } from './audioguida-detail.page';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    FloraFaunaDetailPageRoutingModule,
+    AudioguidaDetailPageRoutingModule,
     SharedModule
   ],
-  declarations: [FloraFaunaDetailPage]
+  declarations: [AudioguidaDetailPage]
 })
-export class FloraFaunaDetailPageModule {}
+export class AudioguidaDetailPageModule {}

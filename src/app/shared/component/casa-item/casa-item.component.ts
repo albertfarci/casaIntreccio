@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { CASE_TYPE_ROUT } from '../../models/case-type.model';
 
 @Component({
   selector: 'app-casa-item',
@@ -8,7 +9,13 @@ import { Component, Input } from '@angular/core';
 export class CasaItemComponent {
 
   @Input() casa
+  @Input() configuration_tipo_casa;
 
   constructor() { }
+
+  getRouterLink() {
+
+    return CASE_TYPE_ROUT.get(this.configuration_tipo_casa)
+  }
 
 }

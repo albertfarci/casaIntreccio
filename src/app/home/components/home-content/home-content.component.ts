@@ -12,6 +12,7 @@ export class HomeContentComponent {
   @Input() caseList;
   @Input() listMapConfiguration: LisMapModel;
   @Input() currentPosition;
+  @Input() configuration_tipo_casa;
 
   constructor() { }
 

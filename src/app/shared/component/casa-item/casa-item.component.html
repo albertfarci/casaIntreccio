@@ -1,4 +1,5 @@
-<ion-card *ngIf="casa?.pmdb_categorie[0] != 'itinerari'" [routerLink]="['/tablinks/chiesa-detail', casa.id]">
+<ion-card *ngIf="casa?.pmdb_categorie[0] != 'itinerari'" 
+[routerLink]="[getRouterLink(), casa.id]">
 
   <img *ngIf="casa.pmdb_galleria_foto.length > 0" src="{{casa?.pmdb_galleria_foto[0]}}" />
   <ion-card-header>

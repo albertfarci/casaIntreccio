@@ -7,6 +7,8 @@ import { Component, Input } from '@angular/core';
 export class CaseListComponent {
 
   @Input() case;
+  @Input() configuration_tipo_casa;
+
 
   constructor() { }
 

@@ -1,5 +1,6 @@
 <app-casa-detail-component *ngIf="casaScanned[0]" [casa]="casaScanned"
-    [esterno]="!!beaconEsterno" [virtualTour]="virtualTour" (stopRangingBeaconsInRegion)="stopRangingBeaconsInRegion()">
+    [esterno]="!!beaconEsterno" [virtualTour]="virtualTour" [configuration_tipo_casa]="'audio'" (stopRangingBeaconsInRegion)="stopRangingBeaconsInRegion()">
 </app-casa-detail-component>
+
 
 <app-loading *ngIf="!casaScanned[0]"></app-loading>

@@ -4,11 +4,11 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite/ngx';
 import { CaseService } from '../shared/services/case.service';
 
 @Component({
-  selector: 'app-flora-fauna-detail',
-  templateUrl: './flora-fauna-detail.page.html',
-  styleUrls: ['./flora-fauna-detail.page.scss'],
+  selector: 'app-laguna-detail',
+  templateUrl: './laguna-detail.page.html',
+  styleUrls: ['./laguna-detail.page.scss'],
 })
-export class FloraFaunaDetailPage implements OnInit {
+export class LagunaDetailPage implements OnInit {
 
 
   casa
@@ -34,7 +34,7 @@ export class FloraFaunaDetailPage implements OnInit {
 
     const id = this.activeRoute.snapshot.paramMap.get('id');
 
-    this.casa = this.caseService.getFloraFaunaById(id)
+    this.casa = this.caseService.getLagunaById(id)
 
     console.log(this.casa)
 
@@ -43,4 +43,5 @@ export class FloraFaunaDetailPage implements OnInit {
   ionViewDidLeave() {
     this.showIframe = false
   }
+
 }

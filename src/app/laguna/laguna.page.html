@@ -23,6 +23,7 @@
 
         <ion-row style="height: 90%;     width: 100%; ">
           <app-home-content style="height: 100%;     width: 100%; " *ngIf="laguna?.length > 0 "
+            [configuration_tipo_casa]="'laguna'"
             [caseList]="laguna" [listMapConfiguration]="listMapSettingsConfiguration">
           </app-home-content>
         </ion-row>

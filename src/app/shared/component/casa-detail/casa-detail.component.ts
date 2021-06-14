@@ -5,6 +5,8 @@ import { DashboardTemplateService } from 'src/app/dashboard/services/dashboard-t
 import { SLIDES_OPTIONS_CONFIGURATIONS } from '../../models/slideoptions.model';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { StorageService } from '../../services/storage.service';
+import { CASE_TYPE_CONFIGURATION } from '../../models/case-type.model';
+
 @Component({
   selector: 'app-casa-detail-component',
   templateUrl: './casa-detail.component.html',
@@ -32,8 +34,10 @@ export class CasaDetailComponent implements OnChanges {
 
   ngOnChanges() {
 
+    console.log(this.casa)    
+    console.log(this.configuration_tipo_casa)
     if (this.casa) {
-      this.nativeStorage.getItem(this.casa[0].id)
+      this.nativeStorage.getItem(this.casa[0]?.id)
         .then(
           data => {
             this.isPrefferedYet = true;
@@ -83,5 +87,9 @@ export class CasaDetailComponent implements OnChanges {
 
   SendEmail() {
     this.socialSharing.shareViaEmail('text', 'subject', ['email@address.com'])
+  }
+
+  isAllowed() {
+    return CASE_TYPE_CONFIGURATION.get(this.configuration_tipo_casa)
   }
 }

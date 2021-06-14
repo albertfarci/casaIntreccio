@@ -1,4 +1,9 @@
 {
+    "descrizione":"Description",
+    "conservazione":"Préservation",
+    "ecologia_e_comportamento":"E'cologie et comportement",
+    "nome_in_sardo":"Nom en sarde",
+    "nome_scientifico": "Nom scientifique",
     "la-laguna":"La laguna",
     "flora-fauna":"Flora e fauna",
     "audioguida":"audioguida",
@@ -8,7 +13,7 @@
     "scansione": "Scan",
     "preferiti": "Favoris",
     "progetto": "Projet",
-    "visita-interattiva": "Interactive visit",
+    "visita-interattiva": "Visite interactive",
     "inzia-visita-interattiva": "Commençons la visite interactive",
     "indicazioni-stradali": "Directions",
     "narrazione": "Storytelling",

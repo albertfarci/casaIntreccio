@@ -33,6 +33,8 @@ export class VirtualTourComponent implements OnChanges {
         );
       }
 
+
+      
       this.casaScanned = this.case
         .map(
           casa => {
