@@ -19,9 +19,15 @@
 
   </ion-card-header>
 
-  <ion-slides pager="true" [options]="slideOpts" *ngIf="isAllowed()?.photos">
+  <ion-slides pager="true" [options]="slideOpts" *ngIf="isAllowed()?.photos && casa[0]?.pmdb_galleria_foto.length > 0">
     <ion-slide *ngFor="let foto of casa[0]?.pmdb_galleria_foto">
       <img class="img-chiesa" src="{{foto}}" (click)="showImageFullScren(foto)" />
+    </ion-slide>
+  </ion-slides>
+
+  <ion-slides pager="true" [options]="slideOpts" *ngIf="isAllowed()?.photos && casa[0]?.pmdb_galleria_foto.length == 0">
+    <ion-slide >
+      <img class="img-chiesa" src="{{casa[0]?.immagine_in_evidenza.medium}}" (click)="showImageFullScren(foto)" />
     </ion-slide>
   </ion-slides>
   <ion-card-content>

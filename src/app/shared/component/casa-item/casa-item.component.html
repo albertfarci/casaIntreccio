@@ -1,7 +1,7 @@
 <ion-card *ngIf="casa?.pmdb_categorie[0] != 'itinerari'" 
 [routerLink]="[getRouterLink(), casa.id]">
 
-  <img *ngIf="casa.pmdb_galleria_foto.length > 0" src="{{casa?.pmdb_galleria_foto[0]}}" />
+  <img src="{{casa.pmdb_galleria_foto.length > 0 ? casa?.pmdb_galleria_foto[0] : casa?.immagine_in_evidenza.large}}" />
   <ion-card-header>
     <ion-card-title [innerHTML]="casa?.title.rendered | titleDeleteComa">
     </ion-card-title>

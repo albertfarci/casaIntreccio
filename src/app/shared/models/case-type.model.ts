@@ -2,6 +2,7 @@ export interface CasaTypeModel {
     title: boolean;
     description: boolean;
     photos: boolean;
+    photos_evidenza: boolean;
     nome_scientifico: boolean;
     nome_in_sardo: boolean;
     ecologia_e_comportamento: boolean;
@@ -37,6 +38,7 @@ export const CASE_TYPE_CONFIGURATION = new Map<CasaTypes, CasaTypeModel>(
                 title: true,
                 description: true,
                 photos: true,
+                photos_evidenza: true,
                 nome_scientifico: false,
                 nome_in_sardo: false,
                 ecologia_e_comportamento: false,
@@ -50,6 +52,7 @@ export const CASE_TYPE_CONFIGURATION = new Map<CasaTypes, CasaTypeModel>(
                 title: true,
                 description: true,
                 photos: true,
+                photos_evidenza: true,
                 nome_scientifico: true,
                 nome_in_sardo: true,
                 ecologia_e_comportamento: true,
@@ -63,6 +66,7 @@ export const CASE_TYPE_CONFIGURATION = new Map<CasaTypes, CasaTypeModel>(
                 title: true,
                 description: true,
                 photos: true,
+                photos_evidenza: true,
                 nome_scientifico: false,
                 nome_in_sardo: false,
                 ecologia_e_comportamento: false,
