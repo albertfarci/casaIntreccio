@@ -34,15 +34,12 @@ export class StorageService {
           .then(() => {
           })
           .catch(e => {
-            alert("error " + JSON.stringify(e))
           });
         })
         .catch(e => {
-          alert("error " + JSON.stringify(e))
         });
         })
         .catch(e => {
-          alert("error " + JSON.stringify(e))
         });
     
   }

@@ -105,7 +105,6 @@ export class GeoLocationService {
                 }
             },
             err => {
-                alert(err);
             }
         );
 
@@ -123,8 +122,6 @@ export class GeoLocationService {
                             this.askToTurnOnGPS();
                         },
                         error => {
-                            //Show alert if user click on 'No Thanks'
-                            alert('requestPermission Error requesting location permissions ' + error)
                         }
                     );
             }
@@ -154,9 +151,7 @@ export class GeoLocationService {
 
     errorHandler(err) {
         if (err.code == 1) {
-            alert("Error: Access is denied!");
         } else if (err.code == 2) {
-            alert("Error: Position is unavailable!");
         }
     }
 

@@ -9,7 +9,6 @@ export class TranslatePipe implements PipeTransform {
     }
 
     transform(value: string): string {
-        console.log(sessionStorage.getItem('lang'))
         this.translateService.use(sessionStorage.getItem('lang'));
         return this.translateService.instant(value);
     }

@@ -43,7 +43,6 @@ export class HomePage {
           this.case = data
         },
         error => {
-          this.alert(JSON.stringify(error))
         }
       )
 
